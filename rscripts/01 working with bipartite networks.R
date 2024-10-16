@@ -72,3 +72,14 @@ plot.igraph(d1_small1976,
             vertex.color="grey",
             vertex.size=5)
             
+
+# move the data to igraph format
+class(small1976)
+d1_ollerton2003<-igraph::graph_from_incidence_matrix(ollerton2003,
+                                                  weighted = T)
+class(d1_ollerton2003)
+plot.igraph(d1_ollerton2003,
+            layout=layout.circle,
+            edge.width=E(d1_ollerton2003)$weight/5,
+            vertex.color="grey",
+            vertex.size=5)
