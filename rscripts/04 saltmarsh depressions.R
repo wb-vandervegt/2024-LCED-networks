@@ -1,3 +1,5 @@
+#wow look at this cool script
+
 #### analysis of the saltmarsh data we collected on monday with the LCED course
 
 # clear everything in the R environment
