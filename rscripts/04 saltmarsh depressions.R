@@ -13,7 +13,7 @@ library(lme4)
 library(lmerTest)
 
 # we work with the following database that you made on monday
-# browseURL("https://docs.google.com/spreadsheets/d/1gAhwMWjA6aD3SMHb0j9X_4xYaxsDBNre6B5XyWDgzzI/edit?usp=sharing")
+browseURL("https://docs.google.com/spreadsheets/d/1gAhwMWjA6aD3SMHb0j9X_4xYaxsDBNre6B5XyWDgzzI/edit?usp=sharing")
 
 # read the data tables from the database
 MetTables<- read_csv('https://docs.google.com/spreadsheets/d/e/2PACX-1vQ2zhCjdrR-4sMpcfvyXunOBdLXKI2VYBnTa8u2Xs-yCTQmLYhE54bl7g9a2-9zRxvgqmCe0RXDuW1X/pub?gid=894288297&single=true&output=csv')
@@ -48,8 +48,8 @@ p2 <-AllData |>
        title="Clay layer")
 p2
 p3<- AllData |>
-  group_by(Type,DomPlantName) |>
-  summarize(Count=n()) |>
+  dplyr::group_by(Type,DomPlantName) |>
+  dplyr::summarize(Count=n()) |>
   ggplot(aes(x=Type,y=Count, fill=DomPlantName)) +
   geom_bar(stat="identity") +
   labs(x="Inside or outside depression",
@@ -64,7 +64,7 @@ p4<- AllData |>
   geom_bar(stat="identity") +
   labs(x="Inside or outside depression",
        y="number of plots",
-       title="Dominant plant species",
+       title="Dominant plant functional type",
        fill="Plant functional type")
 p4
 # show all the plots as a panel plot (using the patchwork library)
